@@ -12,7 +12,7 @@
 -- 
 -- VHDL Test Bench Created by ISE for module: ALU
 -- 
--- Dependencies:
+-- Dependencies:ALU module 
 -- 
 -- Revision:
 -- Revision 0.01 - File Created

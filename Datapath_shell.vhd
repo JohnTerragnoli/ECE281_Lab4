@@ -2,7 +2,7 @@
 --
 -- Title       : Datapath
 -- Design      : Datapath
--- Author      : usafa
+-- Author      : C3C John Paul Terragnoli 
 -- Company     : usafa
 --
 -------------------------------------------------------------------------------
