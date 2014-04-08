@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/PUT_YOUR_PATH_HERE/Datapath_testbench_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="datapath_testbench" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/datapath_testbench/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/reset_l" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset_l</obj_property>
+      <obj_property name="ObjectShortName">reset_l</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/uut/pc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/ir" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ir[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ir[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/uut/marhi" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">marhi[3:0]</obj_property>
+      <obj_property name="ObjectShortName">marhi[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/uut/marlo" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">marlo[3:0]</obj_property>
+      <obj_property name="ObjectShortName">marlo[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/uut/accumulator" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">accumulator[3:0]</obj_property>
+      <obj_property name="ObjectShortName">accumulator[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/uut/pcld" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pcld</obj_property>
+      <obj_property name="ObjectShortName">pcld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/jmpsel" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">jmpsel</obj_property>
+      <obj_property name="ObjectShortName">jmpsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/opsel" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">opsel[2:0]</obj_property>
+      <obj_property name="ObjectShortName">opsel[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/irld" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irld</obj_property>
+      <obj_property name="ObjectShortName">irld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/marhild" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">marhild</obj_property>
+      <obj_property name="ObjectShortName">marhild</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/marlold" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">marlold</obj_property>
+      <obj_property name="ObjectShortName">marlold</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/accld" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">accld</obj_property>
+      <obj_property name="ObjectShortName">accld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/enaccbuffer" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enaccbuffer</obj_property>
+      <obj_property name="ObjectShortName">enaccbuffer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/addrsel" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">addrsel</obj_property>
+      <obj_property name="ObjectShortName">addrsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/aeqzero" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">aeqzero</obj_property>
+      <obj_property name="ObjectShortName">aeqzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath_testbench/alesszero" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">alesszero</obj_property>
+      <obj_property name="ObjectShortName">alesszero</obj_property>
+   </wvobject>
+</wave_config>
