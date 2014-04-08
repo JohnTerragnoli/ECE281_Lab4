@@ -14,3 +14,7 @@ The following files were given to start this lab:
 [Lab4 Waveform](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Lab4_waveform.wcfg)
 
 
+
+This is a screenshot of the ALU simulation.  It words correctly!! Now the ALU can be used to make the data path.  
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/alu_SIMULATION.PNG "ALU Simulation Results")
+
