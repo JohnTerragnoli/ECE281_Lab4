@@ -41,7 +41,11 @@ Once all of these operations were made, a multiplexer was made in VHDL using "wh
 
 ##ALU Test and Debug
 
-After the ALU was made, it was tested using the following testbench.  No alterations were made to the testbench aside from the heading.  
+After the ALU was made, it was tested using the following testbench.  No alterations were made to the testbench aside from the heading.  The original, completely unaltered testbench is provided here [Alu_Testbench_original](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/ALU_testbench_original.vhd).  The version with the altered header for this lab is shown here: [ALU_Testbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/ALU_Testbench.vhd)
+
+
+This testbench was associated with the ALU file and run.  here are the simulation results. 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/alu_SIMULATION.PNG "ALU Simulation Results")
 
 ##Discussion of Datapath Modifications
 
@@ -51,8 +55,7 @@ After the ALU was made, it was tested using the following testbench.  No alterat
 
 
 
-This is a screenshot of the ALU simulation.  It words correctly!! Now the ALU can be used to make the data path.  
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/alu_SIMULATION.PNG "ALU Simulation Results")
+
 
 
 #Data Path Sim
