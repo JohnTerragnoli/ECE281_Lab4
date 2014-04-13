@@ -18,6 +18,9 @@ The following files were given to start this lab.  These files were altered to m
 
 ##ALU Modifications 
 
+When given the ALU shell, the only part that was finished was the importing of the needed libraries, the specifications of the inputs/outputs, and the outline for where processes and conditional statements should go. 
+This original file can be seen here: 
+
 ##ALU Test and Debug
 
 ##Discussion of Datapath Modifications
