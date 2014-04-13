@@ -21,6 +21,14 @@ The following files were given to start this lab.  These files were altered to m
 When given the ALU shell, the only part that was finished was the importing of the needed libraries, the specifications of the inputs/outputs, and the outline for where processes and conditional statements should go. 
 This original file can be seen here: [ALU_Shell_original](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/ALU_shell_original.vhd)
 
+To give this file the correct functionality, it was updated in the following way.
+
+The schematic for the working ALU can be seen below: 
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/ALU_Schematic.PNG "ALU Schematic")
+
+Based on this schematic, and the PRISM manual, the ALU_shell was completed.  
+
 
 
 ##ALU Test and Debug
