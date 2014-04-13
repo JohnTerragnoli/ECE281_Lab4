@@ -47,6 +47,8 @@ After the ALU was made, it was tested using the following testbench.  No alterat
 This testbench was associated with the ALU file and run.  here are the simulation results. 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/alu_SIMULATION.PNG "ALU Simulation Results")
 
+This simulation was examined to make sure that all of the outcomes were accurate, based on the operation chosen at the time.  It was concluded that the simulation worked exactly as predicted.  As a result, the ALU could then be used as a component when creating the entire Datapath later in the lab.  
+
 ##Discussion of Datapath Modifications
 
 ##Datapath Test and Debug
