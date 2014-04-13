@@ -52,6 +52,10 @@ This simulation was examined to make sure that all of the outcomes were accurate
 
 ##Discussion of Datapath Modifications
 
+The datapath shell provided is shown here. [Datapath_original](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_shell_original.vhd) Nothing was changed from the original file.  The completed file is shown here. [DataPath_complete](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_shell.vhd) 
+
+
+
 ##Datapath Test and Debug
 
 ##Discussion of Testbench Operation
