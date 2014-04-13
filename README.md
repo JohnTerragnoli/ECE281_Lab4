@@ -19,7 +19,9 @@ The following files were given to start this lab.  These files were altered to m
 ##ALU Modifications 
 
 When given the ALU shell, the only part that was finished was the importing of the needed libraries, the specifications of the inputs/outputs, and the outline for where processes and conditional statements should go. 
-This original file can be seen here: 
+This original file can be seen here: [ALU_Shell_original](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/ALU_shell_original.vhd)
+
+
 
 ##ALU Test and Debug
 
