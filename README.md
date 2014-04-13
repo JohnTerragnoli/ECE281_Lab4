@@ -1,7 +1,7 @@
 ECE281_Lab4
 ===========
 
-The following files were given to start this lab: 
+The following files were given to start this lab.  These files were altered to meet the requirements of the lab.  
 
 [ALU](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/ALU_Testbench.vhd)
 
