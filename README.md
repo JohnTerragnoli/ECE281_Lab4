@@ -41,6 +41,8 @@ Once all of these operations were made, a multiplexer was made in VHDL using "wh
 
 ##ALU Test and Debug
 
+After the ALU was made, it was tested using the following testbench.  No alterations were made to the testbench aside from the heading.  
+
 ##Discussion of Datapath Modifications
 
 ##Datapath Test and Debug
