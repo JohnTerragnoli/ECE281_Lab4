@@ -287,11 +287,11 @@ Second try:
 
 So the steps can be summed up as follows: 
 
-1. The value B was loaded into the accumulator.
-2. 7 is the IR code for load an immediate value into the accumulator, this was loaded from the data bus into the IR before the time 50ns because the IRld was "on" at that time.  The acumulator was loaded at 50ns where the number B was on the data bus and then put into the accumulator.  This could occur because the AccLd was activated.
+1. Recognize what was happening before 50ns.  
+2. 7 is the IR code for load an immediate value into the accumulator (LDAI), this was loaded from the data bus into the IR before the time 50ns because the IRld was "on" at that time.  The acumulator was loaded at 50ns where the number B was on the data bus and then put into the accumulator.  This could occur because the AccLd was activated.
 3. The data bus then turned to be 3.  
-4. The IRld then turned to be active, putting the number 3 into the IR at 55 ns. 
-5. 3 in the IR means that the bits of the value in the accumulator is to be rotated to the right.  
+4. The IRld then turned to be active, putting the number 3 from the data bus into the IR at 55 ns. 
+5. 3 in the IR means that the bits of the value in the accumulator is to be rotated to the right (ROR).  
 6. The data bus then changed to be 4 at 56 ns. 
 7. The PC load then turned on at 55ns.  This put the value 4 into the PC, meaning that the program was now executing step four.  It was simply moving to the next step after the clock cycle. 
 8. The rotate right command was then followed at 75ns. 
@@ -317,8 +317,7 @@ store	   05	   0	NOP			N	0	Y
 
 
 Anaylzing the JN at 225n: 
-The IR value is 1011, or B, which corresponds to the command JN.  
-Because the accumulator is negative, therefore, the system can jump to the operand address.  Therefore, MARHi and MARLo is put into the address bus (02).  This value on the address bus is then put into the PC at the next clock cycle.  This means that the system has jumped to the line 02 instead of just moving onto the next one.  The code for this would look like the following: 
+The IR value is 1011, or B, which corresponds to the command JN. JN means jumpt to this location if the accumulator is negtive. Because the accumulator is negative, therefore, the system can jump to the operand address.  The data bus turns to 2 at 195ns, and the MARLoLd was active, putting the value 2 into the MARLo 215ns.  The data bus then turned to 0 at 215ns, and the MARHiLd  signal was then turned to on at 215ns, and the value zero was put into the MARHi at 225ns.  The addrLd was then turned on at 225ns.  Therefore, MARHi and MARLo is put into the address bus (02).  This value on the address bus is then put into the PC at the next clock cycle, 235ns.  This could happen because the PCLd was on at that point.  This means that the system has jumped to the line 02 instead of just moving onto the next one.  The code for this would look like the following: 
 
 ```
 		   00	   0	NOP			N	0	Y
@@ -339,7 +338,7 @@ Jump	   02	   0	NOP			N	0	Y
 		   0F	   0				Y	0	N
 ```
 
-The code inbetween address 02 and 0D does not matter.  The focus was on the jump, not what was in between.  
+The code inbetween address 02 and 0D does not matter.  The focus was on the jump and where the program jumped to, not what was in between.  
 
 
 #Documentation: 
