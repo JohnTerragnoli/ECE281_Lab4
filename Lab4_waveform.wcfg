@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/PUT_YOUR_PATH_HERE/Datapath_testbench_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="C:/Users/C16John.Terragnoli/Documents/Documents/My Documents/Academics/Sophomore Year/Spring Semester/ECE 281/ISE Project Stuff/Lab4_Terragnoli" id="1" type="auto">
          <top_modules>
             <top_module name="datapath_testbench" />
             <top_module name="numeric_std" />

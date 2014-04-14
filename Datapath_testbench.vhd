@@ -3,19 +3,19 @@
 -- Engineer: C3C John Terragnoli 
 --
 -- Create Date:    04/07/2014
--- Design Name:   
+-- Design Name:   Datapath_testbench.vhd
 -- Project Name:  PRISM_test
 -- Target Device:  Datapath_shell.  
--- Tool versions:  
--- Description:   
+-- Tool versions:  1.0
+-- Description:   Tests the Datapath
 -- 
 -- VHDL Test Bench Created by ISE for module: Datapath
 -- 
--- Dependencies:
+-- Dependencies: Datapath_shell.vhd
 -- 
--- Revision:
+-- Revision: NA
 -- Revision 0.01 - File Created
--- Additional Comments:
+-- Additional Comments: NONE
 --
 -- Notes: 
 -- This testbench has been automatically generated using types std_logic and
@@ -56,7 +56,7 @@ ARCHITECTURE behavior OF Datapath_testbench IS
          IR : OUT  std_logic_vector(3 downto 0);
          Reset_L : IN  std_logic;
          Clock : IN  std_logic;
-         Data : INOUT  std_logic_vector(3 downto 0);
+         Data : INOUT  std_logic_vector(3 downto 0)
          --IOSEL_L : IN  std_logic;
          --MEMSEL_L : IN  std_logic;
          --R_W : IN  std_logic
@@ -113,7 +113,7 @@ BEGIN
           IR => IR,
           Reset_L => Reset_L,
           Clock => Clock,
-          Data => Data,
+          Data => Data
           --IOSEL_L => IOSEL_L,
           --MEMSEL_L => MEMSEL_L,
           --R_W => R_W

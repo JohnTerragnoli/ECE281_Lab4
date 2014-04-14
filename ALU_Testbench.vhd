@@ -2,21 +2,20 @@
 -- Company: USAFA
 -- Engineer: C3C John Paul Terragnoli 
 --
--- Create Date:   23:16:48 04/07/2014
--- Design Name:   ALU testbench
--- Module Name:   C:/Users/C16John.Terragnoli/Documents/Documents/My Documents/Academics/Sophomore Year/Spring Semester/ECE 281/ISE Project Stuff/Lab4_Terragnoli/ALU_Testbench.vhd
--- Project Name:  Lab4_Terragnoli
--- Target Device:  ALU
+-- Create Date:   10:30 04/08/2014
+-- Design Name:   Testbench for ALU
+-- Project Name:  PRISM_test
+-- Target Device:  ALU_shell
 -- Tool versions:  1.0
--- Description:   
+-- Description:   tests the ALU shell 
 -- 
 -- VHDL Test Bench Created by ISE for module: ALU
 -- 
--- Dependencies:ALU module 
+-- Dependencies: ALU_shell.vhd
 -- 
--- Revision:
+-- Revision: none
 -- Revision 0.01 - File Created
--- Additional Comments:
+-- Additional Comments: none
 --
 -- Notes: 
 -- This testbench has been automatically generated using types std_logic and
@@ -32,10 +31,10 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY ALU_Testbench IS
-END ALU_Testbench;
+ENTITY ALU_testbench IS
+END ALU_testbench;
  
-ARCHITECTURE behavior OF ALU_Testbench IS 
+ARCHITECTURE behavior OF ALU_testbench IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
@@ -47,23 +46,15 @@ ARCHITECTURE behavior OF ALU_Testbench IS
          Result : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
-    
 
-   --Inputs
    signal OpSel : std_logic_vector(2 downto 0) := (others => '0');
    signal Data : std_logic_vector(3 downto 0) := (others => '0');
    signal Accumulator : std_logic_vector(3 downto 0) := (others => '0');
-
- 	--Outputs
    signal Result : std_logic_vector(3 downto 0);
-   -- No clocks detected in port list. Replace <clock> below with 
-   -- appropriate port name 
  
-   constant <clock>_period : time := 10 ns;
- 
+
 BEGIN
  
-	-- Instantiate the Unit Under Test (UUT)
    uut: ALU PORT MAP (
           OpSel => OpSel,
           Data => Data,
@@ -71,26 +62,128 @@ BEGIN
           Result => Result
         );
 
-   -- Clock process definitions
-   <clock>_process :process
-   begin
-		<clock> <= '0';
-		wait for <clock>_period/2;
-		<clock> <= '1';
-		wait for <clock>_period/2;
-   end process;
- 
-
-   -- Stimulus process
    stim_proc: process
+	 
    begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
+      
+		wait for 20 ns;
+		
+		OpSel <= "000";
+		Data <= "0000";
+		Accumulator <= "0000";
+		wait for 20 ns;
 
-      wait for <clock>_period*10;
+		OpSel <= "000";
+		Data <= "0001";
+		Accumulator <= "0010";
+		wait for 20 ns;
 
-      -- insert stimulus here 
+		OpSel <= "001";
+		Data <= "0001";
+		Accumulator <= "0011";
+		wait for 20 ns;
 
+		OpSel <= "001";
+		Data <= "0010";
+		Accumulator <= "0100";
+		wait for 20 ns;
+	
+		OpSel <= "001";
+		Data <= "0010";
+		Accumulator <= "0101";
+		wait for 20 ns;
+		
+		OpSel <= "010";
+		Data <= "0011";
+		Accumulator <= "0110";
+		wait for 20 ns;
+		
+		OpSel <= "010";
+		Data <= "0011";
+		Accumulator <= "0111";
+		wait for 20 ns;
+		
+		OpSel <= "010";
+		Data <= "0100";
+		Accumulator <= "1000";
+		wait for 20 ns;
+		
+		OpSel <= "011";
+		Data <= "0100";
+		Accumulator <= "1001";
+		wait for 20 ns;
+		
+		OpSel <= "011";
+		Data <= "0101";
+		Accumulator <= "1010";
+		wait for 20 ns;
+
+		OpSel <= "011";
+		Data <= "0101";
+		Accumulator <= "1011";
+		wait for 20 ns;
+		
+		OpSel <= "100";
+		Data <= "0110";
+		Accumulator <= "1100";
+		wait for 20 ns;
+		
+		OpSel <= "100";
+		Data <= "0110";
+		Accumulator <= "1101";
+		wait for 20 ns;
+		
+		OpSel <= "100";
+		Data <= "0111";
+		Accumulator <= "1110";
+		wait for 20 ns;
+		
+		OpSel <= "101";
+		Data <= "0111";
+		Accumulator <= "1111";
+		wait for 20 ns;
+		
+		OpSel <= "101";
+		Data <= "1000";
+		Accumulator <= "0000";
+		wait for 20 ns;
+		
+		OpSel <= "101";
+		Data <= "1000";
+		Accumulator <= "0001";
+		wait for 20 ns;
+		
+		OpSel <= "110";
+		Data <= "1001";
+		Accumulator <= "0010";
+		wait for 20 ns;
+		
+		OpSel <= "110";
+		Data <= "1001";
+		Accumulator <= "0011";
+		wait for 20 ns;
+		
+		OpSel <= "110";
+		Data <= "1010";
+		Accumulator <= "0100";
+		wait for 20 ns;
+		
+		OpSel <= "111";
+		Data <= "1010";
+		Accumulator <= "0101";
+		wait for 20 ns;
+		
+		OpSel <= "111";
+		Data <= "1011";
+		Accumulator <= "0110";
+		wait for 20 ns;
+		
+		OpSel <= "111";
+		Data <= "1011";
+		Accumulator <= "0111";
+		wait for 20 ns;
+		
+		
       wait;
    end process;
 
