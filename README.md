@@ -265,6 +265,9 @@ The scrrenshot for this simulation can be seen below:
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_simulation_50_to_100n.PNG "DataPath Simulation Results 225n")
 
+
+The following are a list of thoughts that brought about the eventual conclusion regarding what exactly was going on.  
+
 First, the reset button does not change at all during this time, meaning that everything is never reset. 
 At 50ns: Starting on instruction 3 (PC = 3).  The addresses stored in the MARHi and Lo are 0000 and 0000, and these addresses are consistent for the entire time period. The address select is zero the entire time, meaning that the PC will determine the address bus for the interval. The first operation is chosen, the "and" operation.  So on the next rising edge of the clock, the input into the accumulator should be the data bus "and"ed with the accumulator signal.  B "and"ed with 3 is B, which is why B stays on the accumulator.  Also, the IRLd is on, meaning that what is on the data bus is sent to the 4 bit registrar IR on the next clock cycle.  This happens at 55ns.  
 
@@ -281,6 +284,26 @@ Second try:
 75ns: 4 put on data bus; IR and PC load turned on.  
 85ns: start 5th line of instruction; address changed to 5; IR turned to 4, taken from data bus. ; 3 put on data bus. 
 95ns: Marlo opened up, pc opened up; 
+
+So the steps can be summed up as follows: 
+1. The value 04 was loaded into the accumulator.
+2. The bits of the value 04 were rotated right in the accumulator. 
+3. The address bus was loaded with the value 05.  
+4. This result was then output to the location 05, loaded onto the address bus, through the data bus.
+
+
+To put these steps into PRISM code: 
+
+```
+store	   05	   0	NOP			N	0	Y
+		   06	   0	NOP			N	0	Y
+		   07	   7	LDAI	4		N	1	Y
+		   08	   4				Y	0	N
+		   09	   3	ROR			N	0	Y
+		   0A	   D	STA	store		N	2	Y
+		   0B	   5				Y	0	N
+		   0C	   0				Y	0	N
+```
 
 
 
