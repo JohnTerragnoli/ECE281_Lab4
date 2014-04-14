@@ -265,7 +265,21 @@ The scrrenshot for this simulation can be seen below:
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_simulation_50_to_100n.PNG "DataPath Simulation Results 225n")
 
 First, the reset button does not change at all during this time, meaning that everything is never reset. 
-At 50ns: The addresses stored in the MARHi and Lo are 0000 and 0000, and these addresses are consistent for the entire time period. The first operation is chosen, the "and" operation.  So on the next rising edge of the clock, the input into the accumulator should be the data bus "and"ed with the accumulator signal.  
+At 50ns: Starting on instruction 3 (PC = 3).  The addresses stored in the MARHi and Lo are 0000 and 0000, and these addresses are consistent for the entire time period. The address select is zero the entire time, meaning that the PC will determine the address bus for the interval. The first operation is chosen, the "and" operation.  So on the next rising edge of the clock, the input into the accumulator should be the data bus "and"ed with the accumulator signal.  B "and"ed with 3 is B, which is why B stays on the accumulator.  Also, the IRLd is on, meaning that what is on the data bus is sent to the 4 bit registrar IR on the next clock cycle.  This happens at 55ns.  
+
+At 55n; the pcld turns to 1, and thus the program moves onto the next instruction.  
+
+
+Second try: 
+50ns: 
+55ns: instruction 4 (PC); 3 loaded into IR; Address bus gets the value of PC, now 4.  
+	a little after PC and IR prevented from turning. 
+	a little after 4 is put onto the data bus (from where?)
+65ns: what's in the accumulator is ROR. B is changed to D 
+75ns: 4 put on data bus; IR and PC load turned on.  
+85ns: start 5th line of instruction; address changed to 5; IR turned to 4, taken from data bus. ; 3 put on data bus. 
+95ns: Marlo opened up, pc opened up; 
+
 
 #Documentation: 
 C3C Park helped me comb through my Datapath file to find out what was wrong with the address registrar.  
