@@ -67,7 +67,7 @@ Then, the rest of the "boxes" shown in the diagram were implemented with combina
 
 To make the instruction registar a process was made that was sensitive to the clock and the reset signal, meaning that the process would only run if either the reset or the clock signal changed. Inside this process, if statements were used to make the IR signal, an output signal, equal to "0000" when the reset signal was '1', and to load whatever data was in the Data bus into the IR signal if the IRLd signal was '0'. These were the only instructions included in the Instruction Registar. 
 
-Then, the logic for the Memory Access Register (Hi and Lo) was then made.  Again, this was done inside a process that was sensitive to the reset and clock signal.  
+Then, the logic for the Memory Access Register (Hi and Lo) registars was then made.  Again, this was done inside a process that was sensitive to the reset and clock signal.  A process was made for both the Hi and the Low registar.  If the reset was '0', then the MARHi/Lo was set to be "0000", for the respective process.  If the MARHiLd/LoLd signal '1', then the bits in the data bus were put into the MARHi and MARLi signals, for each respective process.  These were the only instructions included in the Memory Access Register (Hi and Lo) registars. 
 
 
 
