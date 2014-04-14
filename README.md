@@ -260,8 +260,9 @@ Information on this can be seen under the heading "Reverse Engineering"
 #Reverse Engineering
 
 ##Simulation Analysis between 50 and 100ns
+The scrrenshot for this simulation can be seen below: 
 
-
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_simulation_50_to_100n.PNG "DataPath Simulation Results 225n")
 
 #Documentation: 
 C3C Park helped me comb through my Datapath file to find out what was wrong with the address registrar.  
