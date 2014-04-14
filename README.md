@@ -54,7 +54,12 @@ This simulation was examined to make sure that all of the outcomes were accurate
 
 The datapath shell provided is shown here. [Datapath_original](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_shell_original.vhd) Nothing was changed from the original file.  The only parts completed in the original datapath file were the inputs and outputs of the system and the program counter of the data path.  For everything else, only comments were provided to indicate where the code should go. The completed file, compete with headings, is shown here. [DataPath_complete](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_shell.vhd) 
 
-The specific parts that were modified are discussed below. 
+The schematic for the data path is shown here: 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/datapath_schematic.PNG "ALU Simulation Results")
+
+Notice that the schematic of the ALU, is inside of this schematic.  
+
+The specific parts of the code that were modified are discussed below. 
 
 
 
