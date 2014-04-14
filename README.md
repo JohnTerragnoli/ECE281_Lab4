@@ -154,7 +154,7 @@ Then, the logic for the Memory Access Register (Hi and Lo) registars was then ma
   	end process;   
 ``` 
 
-Next, the logic for the Jmp Registar was made.  This was done inside a process that was sensitive to the AddrSel, MARHi, MARLo, and PC(from the PC registar) signals.  The logic for this can be seen below: 
+Next, the logic for the address selector was made.  This was done inside a process that was sensitive to the AddrSel, MARHi, MARLo, and PC(from the PC registar) signals.  It basically creates a multiplexer with two choices.  Either the address or the PC can be sent to the address signal, and this is decided by the AddrSel signal, a one bit signal. The logic for this can be seen below: 
 
 ```VHDL
 
@@ -172,7 +172,41 @@ Next, the logic for the Jmp Registar was made.  This was done inside a process t
 		
 ```
 
+Notice that the MARHi and the MARLo were concatenated together to make the full address. 
 All of this logic was acquired by examining the schematic given in the lab instructions.  
+
+The logic for the accumulator was then made. It was mainly describing what goes into the accumulator.  This was done inside a process that was sensitive to the clock and reset signals. The gist of the accumulator code is that the accumulator will reset when the reset signal tells it to, and the ALU_Result from the ALU will be put into the accumulator whenever the AccLd signal permits.  This code can be seen below; 
+
+```VHDL
+
+	process(Clock, RESET_L)		
+  	begin				 	
+	  	if(Reset_L = '1') then 	
+			Accumulator <="0000";
+		elsif(rising_edge(Clock)) then 
+			if(AccLd = '1') then 
+			Accumulator <= ALU_Result; 
+			end if; 
+		end if ;
+  	end process;   
+```
+
+
+The logic for the tri-state buffer was then created.  When the EnAcBuffer signal was '1', what was in the accumulator was allowed to enter the Data bus.  when it was not '1', the buffer would instead output "ZZZZ", or high impedence.  The code for this can be seen below: 
+
+```VHDL
+	Data <=  Accumulator when  (EnAccBuffer = '1')else         
+				"ZZZZ";
+```
+
+
+The code for the Datapath status signals were also created; the code can be seen below. 
+
+```VHDL  
+	AlessZero <=   Accumulator(3); 
+  	AeqZero <= not Accumulator(3) or Accumulator(2) or Accumulator(1) or Accumulator(0); 
+```
+
 
 
 
@@ -187,8 +221,9 @@ changed to:
 ```VHDL
 elsif (rising_edge(clock)) then 
 ```
-
 The reasons for doing this were discussed in Computer Exercise 4. 
+
+Those were all of the changes made to the data path.  
 
 ##Datapath Test and Debug
 
