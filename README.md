@@ -316,7 +316,7 @@ store	   05	   0	NOP			N	0	Y
 
 
 
-Anaylzing the JN at 225n: 
+##Simulation Analysis Around 225ns 
 The IR value is 1011, or B, which corresponds to the command JN. JN means jumpt to this location if the accumulator is negtive. Because the accumulator is negative, therefore, the system can jump to the operand address.  The data bus turns to 2 at 195ns, and the MARLoLd was active, putting the value 2 into the MARLo 215ns.  The data bus then turned to 0 at 215ns, and the MARHiLd  signal was then turned to on at 215ns, and the value zero was put into the MARHi at 225ns.  The addrLd was then turned on at 225ns.  Therefore, MARHi and MARLo is put into the address bus (02).  This value on the address bus is then put into the PC at the next clock cycle, 235ns.  This could happen because the PCLd was on at that point.  This means that the system has jumped to the line 02 instead of just moving onto the next one.  The code for this would look like the following: 
 
 ```
