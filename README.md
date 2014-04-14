@@ -229,13 +229,18 @@ Those were all of the changes made to the data path.
 
 The completed Datapath module was then tested using the [Datapath_Testbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_testbench.vhd) provided. The original, completely unaltered version of the testbench can be seen here: [OriginalDataPathTestbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_testbench_original.vhd)
 
+The original test of the datapath can be seen here: 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/data_path_sim.PNG "DataPath Simulation Results")
+
+However, these results were not correct.  Therefore, troubleshooting was done to find out what the problem was.  
+
 ##Discussion of Testbench Operation
 
-
+The results for the datapath test bench were supposed to look like this:
 
 
 
 
 #Data Path Sim
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/data_path_sim.PNG "DataPath Simulation Results")
+
 
