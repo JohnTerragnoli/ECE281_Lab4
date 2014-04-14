@@ -61,13 +61,118 @@ Notice that the schematic of the ALU, is inside of this schematic.
 
 The specific parts of the code that were modified are discussed below. 
 
+The given code for the program counter is shown here: 
+
+```VHDL
+	process(Clock,Reset_L)
+  	begin				 
+	  if(Reset_L = '0') then
+		  	PC <= "00000000";
+	  elsif (rising_edge(clock)) then 
+		  if (PCLd = '1' and JmpSel = '1') then
+		        PC(7 downto 4) <= MARHi;   
+			PC(3 downto 0) <= MARLo;
+		  elsif (PCLd = '1' and JmpSel = '0') then
+			  PC <= unsigned(PC) + 1;
+		  end if;
+		end if;		
+  	end process;
+```
+
 First, because the ALU is used within the datapath, a declaration and an instantiation of the ALU was made in the datapath code.  For the instantiation, the inputs were made to be the data bus, the accumulator, and the OpSel of the datapath.  The output was made to be an internal wire called "ALU_result", which fed into the accumulator.  
+
+```VHDL
+--declaration
+	COMPONENT ALU_Shell
+	PORT(
+		OpSel: in STD_LOGIC_VECTOR(2 downto 0);
+		Data: in STD_LOGIC_VECTOR(3 downto 0);
+		Accumulator: in STD_LOGIC_VECTOR(3 downto 0);
+		Result:out STD_LOGIC_VECTOR(3 downto 0)
+		);
+	END COMPONENT;
+
+
+--instatiation
+		da_ALU: ALU_shell
+	PORT MAP(
+		OpSel => OpSel,
+		data => data,
+		accumulator => accumulator,
+		result => ALU_Result
+	);
+
+
+```
 
 Then, the rest of the "boxes" shown in the diagram were implemented with combinational logic.  To understand how to make each component of the Datapath, the schematic was used.  
 
-To make the instruction registar a process was made that was sensitive to the clock and the reset signal, meaning that the process would only run if either the reset or the clock signal changed. Inside this process, if statements were used to make the IR signal, an output signal, equal to "0000" when the reset signal was '1', and to load whatever data was in the Data bus into the IR signal if the IRLd signal was '0'. These were the only instructions included in the Instruction Registar. 
+To make the instruction registar a process was made that was sensitive to the clock and the reset signal, meaning that the process would only run if either the reset or the clock signal changed. Inside this process, if statements were used to make the IR signal, an output signal, equal to "0000" when the reset signal was '1', and to load whatever data was in the Data bus into the IR signal if the IRLd signal was '0'. These were the only instructions included in the Instruction Registar. The code for this registar is shown below: 
 
-Then, the logic for the Memory Access Register (Hi and Lo) registars was then made.  Again, this was done inside a process that was sensitive to the reset and clock signal.  A process was made for both the Hi and the Low registar.  If the reset was '0', then the MARHi/Lo was set to be "0000", for the respective process.  If the MARHiLd/LoLd signal '1', then the bits in the data bus were put into the MARHi and MARLi signals, for each respective process.  These were the only instructions included in the Memory Access Register (Hi and Lo) registars. 
+```VHDL 
+	process(Clock,reset_L)
+  	begin				   
+		if(Reset_L = '0') then
+				IR <= "0000"; 
+		elsif(rising_edge(Clock)) then
+			if(IRLd = '1') then
+				IR <= data; 
+			end if; 
+		end if; 
+  	end process;   
+```
+
+
+
+Then, the logic for the Memory Access Register (Hi and Lo) registars was then made.  Again, this was done inside a process that was sensitive to the reset and clock signal.  A process was made for both the Hi and the Low registar.  If the reset was '0', then the MARHi/Lo was set to be "0000", for the respective process.  If the MARHiLd/LoLd signal '1', then the bits in the data bus were put into the MARHi and MARLi signals, for each respective process.  These were the only instructions included in the Memory Access Register (Hi and Lo) registars. The code for these registars is shown below: 
+
+
+```VHDL
+--HIGH
+	process(Clock,Reset_L)
+  	begin				 
+	  if(Reset_L = '0') then
+			MARHi <= "0000"; 
+	  elsif(rising_edge(Clock)) then 
+			if(MARHiLd = '1') then
+				MARHi <= data; 
+			end if; 
+	  end if; 
+  	end process;       
+
+--LOW
+	
+	process(Clock,Reset_L)
+  	begin				 
+	  if(Reset_L = '0') then
+			MARLo <= "0000"; 
+	  elsif(rising_edge(Clock)) then 
+			if(MARLoLd = '1') then
+				MARLo <= data; 
+			end if; 
+	  end if; 
+  	end process;   
+``` 
+
+Next, the logic for the Jmp Registar was made.  This was done inside a process that was sensitive to the AddrSel, MARHi, MARLo, and PC(from the PC registar) signals.  The logic for this can be seen below: 
+
+```VHDL
+
+	process(AddrSel, MARHi, MARLo, PC)
+  	begin		
+		if(rising_edge(Clock)) then
+			if(AddrSel='1') then 
+			Addr <= MARHi & MARLo; 
+			elsif(AddrSel = '0') then 
+			Addr <= PC; 
+			end if; 
+	  end if; 
+  	end process;   
+		
+		
+```
+
+All of this logic was acquired by examining the schematic given in the lab instructions.  
 
 
 
