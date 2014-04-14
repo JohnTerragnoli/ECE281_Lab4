@@ -292,7 +292,7 @@ Because the accumulator is negative, therefore, the system can jump to the opera
 ```
 		   00	   0	NOP			N	0	Y
 		   01	   0	NOP			N	0	Y
-	Jump	   02	   0	NOP			N	0	Y
+Jump	   02	   0	NOP			N	0	Y
 		   03	   0	NOP			N	0	Y
 		   04	   0	NOP			N	0	Y
 		   05	   0	NOP			N	0	Y
@@ -303,10 +303,13 @@ Because the accumulator is negative, therefore, the system can jump to the opera
 		   0A	   0	NOP			N	0	Y
 		   0B	   0	NOP			N	0	Y
 		   0C	   0	NOP			N	0	Y
-		   0D	   B	JN	Jump		N	2	Y
+		   0D	   B	JN	Jump	N	2	Y
 		   0E	   2				Y	0	N
 		   0F	   0				Y	0	N
 ```
+
+The code inbetween address 02 and 0D does not matter.  The focus was on the jump, not what was in between.  
+
 
 #Documentation: 
 C3C Park helped me comb through my Datapath file to find out what was wrong with the address registrar.  
