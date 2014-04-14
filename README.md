@@ -63,8 +63,11 @@ The specific parts of the code that were modified are discussed below.
 
 First, because the ALU is used within the datapath, a declaration and an instantiation of the ALU was made in the datapath code.  For the instantiation, the inputs were made to be the data bus, the accumulator, and the OpSel of the datapath.  The output was made to be an internal wire called "ALU_result", which fed into the accumulator.  
 
-Then, the rest of the "boxes" shown in the diagram were implemented with combinational logic.  
+Then, the rest of the "boxes" shown in the diagram were implemented with combinational logic.  To understand how to make each component of the Datapath, the schematic was used.  
 
+To make the instruction registar a process was made that was sensitive to the clock and the reset signal, meaning that the process would only run if either the reset or the clock signal changed. Inside this process, if statements were used to make the IR signal, an output signal, equal to "0000" when the reset signal was '1', and to load whatever data was in the Data bus into the IR signal if the IRLd signal was '0'. These were the only instructions included in the Instruction Registar. 
+
+Then, the logic for the Memory Access Register (Hi and Lo) was then made.  Again, this was done inside a process that was sensitive to the reset and clock signal.  
 
 
 
