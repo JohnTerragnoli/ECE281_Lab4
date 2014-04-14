@@ -254,11 +254,13 @@ Also, notice how there is a Jump at approximately 225ns in the snapshot of the s
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_225n_simulation.PNG "DataPath Simulation Results 225n")
 
 ##Discussion of Testbench Operation
+Information on this can be seen under the heading "Reverse Engineering"
 
 
+#Reverse Engineering
 
+##Simulation Analysis between 50 and 100ns
 
-#Data Path Sim
 
 
 #Documentation: 
