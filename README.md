@@ -249,6 +249,9 @@ The final simulation up to 50n can be seen below:
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_simulation_50n_correct.PNG "DataPath Simulation Results 50n")
 
 
+Also, notice how there is a Jump at approximately 225ns in the snapshot of the simulation below: 
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_225n_simulation.PNG "DataPath Simulation Results 225n")
 
 ##Discussion of Testbench Operation
 
