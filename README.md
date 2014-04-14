@@ -287,19 +287,26 @@ Second try:
 
 So the steps can be summed up as follows: 
 
-1. The value 04 was loaded into the accumulator.
-2. The bits of the value 04 were rotated right in the accumulator. 
-3. The address bus was loaded with the value 05.  
-4. This result was then output to the location 05, loaded onto the address bus, through the data bus.
-
+1. The value B was loaded into the accumulator.
+2. 7 is the IR code for load an immediate value into the accumulator, this was loaded from the data bus into the IR before the time 50ns because the IRld was "on" at that time.  The acumulator was loaded at 50ns where the number B was on the data bus and then put into the accumulator.  This could occur because the AccLd was activated.
+3. The data bus then turned to be 3.  
+4. The IRld then turned to be active, putting the number 3 into the IR at 55 ns. 
+5. 3 in the IR means that the bits of the value in the accumulator is to be rotated to the right.  
+6. The data bus then changed to be 4 at 56 ns. 
+7. The PC load then turned on at 55ns.  This put the value 4 into the PC, meaning that the program was now executing step four.  It was simply moving to the next step after the clock cycle. 
+8. The rotate right command was then followed at 75ns. 
+9. The data bus then change to be 4, and the IR load was active, making the IR 4 at 85ns. 
+10. The value 4 in the IR means STA, or store the value in the specified location. 
+11. The databus changed to be 3 at 85 ns, and this was put into the marlo. 
+12. at 85ns, the address bus changed to be 05, meaning that the STA command initated by the IR will put the value in the accumulator, D, which is B ROR, into the storage space 05.  
 
 To put these steps into PRISM code: 
 
 ```
 store	   05	   0	NOP			N	0	Y
 		   06	   0	NOP			N	0	Y
-		   07	   7	LDAI	4	N	1	Y
-		   08	   4				Y	0	N
+		   07	   7	LDAI	B	N	1	Y
+		   08	   B				Y	0	N
 		   09	   3	ROR			N	0	Y
 		   0A	   D	STA	store	N	2	Y
 		   0B	   5				Y	0	N
