@@ -297,10 +297,10 @@ To put these steps into PRISM code:
 ```
 store	   05	   0	NOP			N	0	Y
 		   06	   0	NOP			N	0	Y
-		   07	   7	LDAI	4		N	1	Y
+		   07	   7	LDAI	4	N	1	Y
 		   08	   4				Y	0	N
 		   09	   3	ROR			N	0	Y
-		   0A	   D	STA	store		N	2	Y
+		   0A	   D	STA	store	N	2	Y
 		   0B	   5				Y	0	N
 		   0C	   0				Y	0	N
 ```
