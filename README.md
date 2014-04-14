@@ -227,6 +227,8 @@ Those were all of the changes made to the data path.
 
 ##Datapath Test and Debug
 
+The completed Datapath module was then tested using the [Datapath_Testbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_testbench.vhd) provided. The original, completely unaltered version of the testbench can be seen here: [OriginalDataPathTestbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_testbench_original.vhd)
+
 ##Discussion of Testbench Operation
 
 
