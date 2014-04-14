@@ -286,6 +286,7 @@ Second try:
 95ns: Marlo opened up, pc opened up; 
 
 So the steps can be summed up as follows: 
+
 1. The value 04 was loaded into the accumulator.
 2. The bits of the value 04 were rotated right in the accumulator. 
 3. The address bus was loaded with the value 05.  
