@@ -250,6 +250,7 @@ The final simulation up to 50n can be seen below:
 
 
 Also, notice how there is a Jump at approximately 225ns in the snapshot of the simulation below: 
+It's a JN, meaning that the jump will only occur if the accumulator value is negative.  
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_225n_simulation.PNG "DataPath Simulation Results 225n")
 
@@ -281,6 +282,31 @@ Second try:
 85ns: start 5th line of instruction; address changed to 5; IR turned to 4, taken from data bus. ; 3 put on data bus. 
 95ns: Marlo opened up, pc opened up; 
 
+
+
+
+Anaylzing the JN at 225n: 
+The IR value is 1011, or B, which corresponds to the command JN.  
+Because the accumulator is negative, therefore, the system can jump to the operand address.  Therefore, MARHi and MARLo is put into the address bus (02).  This value on the address bus is then put into the PC at the next clock cycle.  This means that the system has jumped to the line 02 instead of just moving onto the next one.  The code for this would look like the following: 
+
+```
+		   00	   0	NOP			N	0	Y
+		   01	   0	NOP			N	0	Y
+	Jump	   02	   0	NOP			N	0	Y
+		   03	   0	NOP			N	0	Y
+		   04	   0	NOP			N	0	Y
+		   05	   0	NOP			N	0	Y
+		   06	   0	NOP			N	0	Y
+		   07	   0	NOP			N	0	Y
+		   08	   0	NOP			N	0	Y
+		   09	   0	NOP			N	0	Y
+		   0A	   0	NOP			N	0	Y
+		   0B	   0	NOP			N	0	Y
+		   0C	   0	NOP			N	0	Y
+		   0D	   B	JN	Jump		N	2	Y
+		   0E	   2				Y	0	N
+		   0F	   0				Y	0	N
+```
 
 #Documentation: 
 C3C Park helped me comb through my Datapath file to find out what was wrong with the address registrar.  
