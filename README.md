@@ -61,7 +61,26 @@ Notice that the schematic of the ALU, is inside of this schematic.
 
 The specific parts of the code that were modified are discussed below. 
 
+First, because the ALU is used within the datapath, a declaration and an instantiation of the ALU was made in the datapath code.  For the instantiation, the inputs were made to be the data bus, the accumulator, and the OpSel of the datapath.  The output was made to be an internal wire called "ALU_result", which fed into the accumulator.  
 
+Then, the rest of the "boxes" shown in the diagram were implemented with combinational logic.  
+
+
+
+
+Also, another change made to the original file shown below: 
+
+```VHDL
+elsif (Clock'event and Clock='1') then 
+```
+
+changed to: 
+
+```VHDL
+elsif (rising_edge(clock)) then 
+```
+
+The reasons for doing this were discussed in Computer Exercise 4. 
 
 ##Datapath Test and Debug
 
