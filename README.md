@@ -258,3 +258,5 @@ The final simulation up to 50n can be seen below:
 #Data Path Sim
 
 
+#Documentation: 
+C3C Park helped me comb through my Datapath file to find out what was wrong with the address registrar.  
