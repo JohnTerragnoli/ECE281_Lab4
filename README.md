@@ -240,6 +240,8 @@ The results for the datapath test bench were supposed to look like this:
 
 Because the original results did not look like this, trouble shooting was done to fix the testbench.  Looking back at the code, it was discovered that the MARHi and MARLo sections were wrong.  The selector RDLd was used for each instead of the MARLoLd and MARHiLd selectors.  This was most likely happened because much copying and pasting was being done while writing the code.   
 
+To fix the AlezzZero and AeqZero, I decided to first tackle the Accumulator.  
+
 Also, I noticed that I was not loading the waveform file properly.  Once I did this, everything ran correctly.  
 
 
