@@ -275,6 +275,7 @@ Second try:
 55ns: instruction 4 (PC); 3 loaded into IR; Address bus gets the value of PC, now 4.  
 	a little after PC and IR prevented from turning. 
 	a little after 4 is put onto the data bus (from where?)
+	What was in Data was loaded into the accumulator (Operation 7) 
 65ns: what's in the accumulator is ROR. B is changed to D 
 75ns: 4 put on data bus; IR and PC load turned on.  
 85ns: start 5th line of instruction; address changed to 5; IR turned to 4, taken from data bus. ; 3 put on data bus. 
