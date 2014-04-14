@@ -234,9 +234,15 @@ The original test of the datapath can be seen here:
 
 However, these results were not correct.  Therefore, troubleshooting was done to find out what the problem was.  
 
-##Discussion of Testbench Operation
-
 The results for the datapath test bench were supposed to look like this:
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_example_simulation.PNG "DataPath Simulation Results")
+
+Because the original results did not look like this, trouble shooting was done to fix the testbench.  Looking back at the code, it was discovered that the MARHi and MARLo sections were wrong.  The selector RDLd was used for each instead of the MARLoLd and MARHiLd selectors.  This was most likely happened because much copying and pasting was being done while writing the code.   
+
+
+
+##Discussion of Testbench Operation
 
 
 
