@@ -264,5 +264,8 @@ The scrrenshot for this simulation can be seen below:
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_simulation_50_to_100n.PNG "DataPath Simulation Results 225n")
 
+First, the reset button does not change at all during this time, meaning that everything is never reset. 
+At 50ns: The addresses stored in the MARHi and Lo are 0000 and 0000, and these addresses are consistent for the entire time period. The first operation is chosen, the "and" operation.  So on the next rising edge of the clock, the input into the accumulator should be the data bus "and"ed with the accumulator signal.  
+
 #Documentation: 
 C3C Park helped me comb through my Datapath file to find out what was wrong with the address registrar.  
