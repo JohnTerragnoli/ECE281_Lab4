@@ -244,6 +244,10 @@ To fix the AlezzZero and AeqZero, I decided to first tackle the Accumulator.  Af
 
 Also, I noticed that I was not loading the waveform file properly.  Once I did this, everything ran correctly.  It took an embarrassing amount of time to figure this out.  
 
+The final simulation up to 50n can be seen below: 
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_Lab4/master/Datapath_simulation_50n_correct.PNG "DataPath Simulation Results 50n")
+
 
 
 ##Discussion of Testbench Operation
